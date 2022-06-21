@@ -1,8 +1,45 @@
-
+/* Section Selectors */
 const introSection = document.querySelector("#intro-section");
 const carouselSection = document.querySelector("#carousel-section");
 const aboutSection = document.querySelector("#about-section");
 const buySection = document.querySelector("#buy-section");
+const navBar = document.querySelector("#navbar");
+const infoH3 = document.querySelector("#info");
+const authorH3 = document.querySelector("#author");
+const buyH3ID = document.querySelector("#buy");
+const classH3 = document.querySelectorAll(".h3Nav");
+const classA = document.querySelectorAll(".aNav");
+
+const wavesIcon = document.createElement("img");
+wavesIcon.setAttribute("id", "waves-icon");
+wavesIcon.src = "wavesicon.png";
+
+
+function wavesShow() {
+    if (window.innerWidth <= 1000) {
+        navBar.appendChild(wavesIcon);
+        wavesIcon.style.display = "flex";
+        navBar.style.border = "none";
+        navBar.style.justifyItems = "flex-end";
+        wavesIcon.style.justifyItems = "flex-end";
+        wavesIcon.style.marginTop = "5px";
+        wavesIcon.style.marginRight = "5px"
+        wavesIcon.style.alignItems = "center";
+        wavesIcon.addEventListener("click", function () {
+            const navDiv = document.createElement("div");
+            navBar.style.display = "flex";
+            navDiv.style.width = "100%";
+            navDiv.style.height = "50px";
+            navDiv.style.border = "1px solid black";
+        })
+    } else {
+        wavesIcon.style.display = "none";
+    }
+}
+
+window.onload = wavesShow();
+
+
 
 const introPicCreate = document.createElement("img");
 introPicCreate.setAttribute("id", "intro-pic");
@@ -75,6 +112,11 @@ buySection.appendChild(amazonLink)
 buyH3.textContent = "Buy Today";
 facebookLink.textContent = "Join the Facebook Page";
 amazonLink.textContent = "Buy at Amazon";
+facebookLink.style.marginBottom = "-50px";
+facebookLink.setAttribute("href", "https://www.facebook.com/FernandinaGrowingUp")
+amazonLink.setAttribute("href", "https://www.amazon.com/Fernandina-Growing-Amelia-Island-Gordon-Hart-ebook/dp/B016CC28L8/ref=sr_1_1?crid=33R06WJ253AC6&keywords=fernandina+growing+up+on+amelia+island&qid=1655666041&sprefix=fernandina+growing+up+on+amelia+island%2Caps%2C61&sr=8-1")
+facebookLink.style.color = "black";
+amazonLink.style.color = "black";
 
 introSection.append(introPicCreate);
 
@@ -202,14 +244,14 @@ carouselReviewTurn(0)
 divCarouselWrapper.style.display = "none";
 divReview.style.display = "none";
 
-carouselSection.addEventListener("mouseover", function(){
+carouselSection.addEventListener("mouseover", function () {
     divCarouselWrapper.style.display = "flex";
     divCarouselWrapper.style.animation = "opacity 2.25s";
     divReview.style.display = "flex";
     divReview.style.animation = "opacity 2.25s"
 })
 
-carouselSection.addEventListener("mouseout", function(){
+carouselSection.addEventListener("mouseout", function () {
     divReview.style.display = "none";
     divCarouselWrapper.style.display = "none";
 })
@@ -217,7 +259,7 @@ carouselSection.addEventListener("mouseout", function(){
 aboutImage.style.display = "none";
 aboutInfo.style.display = "none";
 
-aboutSection.addEventListener("mouseover", function(){
+aboutSection.addEventListener("mouseover", function () {
     aboutImage.style.display = "flex";
     aboutInfo.style.display = "flex";
     aboutImage.style.animation = "opacity 2.25s";
@@ -228,7 +270,7 @@ aboutSection.addEventListener("mouseover", function(){
     aboutSpanCreate5.style.animation = "opacity 4s";
 })
 
-aboutSection.addEventListener("mouseout", function(){
+aboutSection.addEventListener("mouseout", function () {
     aboutImage.style.display = "none";
     aboutInfo.style.display = "none";
     aboutImage.style.animation = "opacity 2.25s"
