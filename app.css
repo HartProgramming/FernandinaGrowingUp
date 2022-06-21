@@ -2,6 +2,7 @@ body{
     margin: 0;
     background-image: url("WebsiteBackground.png");
     background-size: cover;
+    position: relative;
 }
 
 #header{
@@ -90,18 +91,40 @@ hr{
     color: black;
     font-family: Heebo;
     display: flex;
-    margin: 0;
+    flex-direction: row;
+    margin: auto;
     font-size: 24px;
-    align-items: center;
-    justify-content: center;
     border-bottom: 1px solid black;
+    align-items: center;
+    justify-content: space-evenly;
     animation: opacity 6s;
 }
+
+  #waves-icon {
+      width: 55px;
+      margin: auto;
+      display: none;
+      height: cover;
+      position: relative;
+      border: 1px solid black;
+      justify-content: flex-end;
+  }
+
+        #close-icon {
+            width: 55px;
+            margin: auto;
+            display: none;
+            height: cover;
+            position: relative;
+            border: 1px solid black;
+            justify-content: flex-end;
+        }
 
 .aNav{
     margin: 50px;
     text-decoration: none;
     color: black;
+    display: flex;
     padding-left: 20px;
     padding-right: 20px;
 }
@@ -364,34 +387,65 @@ hr{
         color: black;
         font-family: Heebo;
         display: flex;
-        margin: 0;
+        flex-direction: row;
+        width: 100%;
+        margin: auto;
         font-size: 24px;
         align-items: center;
-        justify-content: center;
+        justify-content: space-evenly;
         animation: opacity 6s;
+        border-bottom: 1px solid black;
     }
 
     #waves-icon{
-        width: 55px;
-        margin: auto;
         display: flex;
-        height: cover;
-        border: 1px solid black;
-        justify-content: flex-end;
+        height: 50px;
+        width: 50px;
+        margin-top: 10px;
+        margin-right: 10px;
+    }
+         #close-icon {
+             width: 55px;
+             margin: auto;
+             display: none;
+             height: 55px;
+             margin-top: 10px;
+             margin-right: 10px;
+             position: relative;
+             border: 1px solid black;
+             justify-content: flex-end;
+         }
+
+    #menu-dropdown{
+        height: 100px;
+        width: 100%;
+        display: none;
+        margin: auto;
+        font-family: Heebo;
+        flex-direction: column;
+        justify-content: flex-start;
+        border-bottom: 1px solid black;
+    }
+
+    .h3Nav{
+        display: flex;
+        padding: none;
+        margin: 0;
     }
 
   .aNav{
-        margin: 50px;
         text-decoration: none;
         color: black;
-        padding-left: 20px;
-        padding-right: 20px;
-        display: none;
+        display: flex;
+        padding: none;
+        margin: 0;
     }
     .aNav:hover{
         color: black;
         background-color: white;
-        display: none;
+        display: flex;
+        padding: none;
+        margin: 0;
     }
 
     #intro-section {
@@ -548,7 +602,7 @@ hr{
     }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 700px) {
     #header {
             display: flex;
             flex-direction: row;
@@ -632,28 +686,24 @@ hr{
             }
         }
     
-        #navbar {
-            height: 40px;
-            color: black;
-            font-family: Heebo;
-            display: flex;
+
+        .h3Nav{
+            padding: none;
             margin: 0;
-            font-size: 24px;
-            align-items: center;
-            justify-content: center;
-            border-bottom: 1px solid black;
-            animation: opacity 6s;
         }
     
         .aNav{
             text-decoration: none;
             color: black;
-            display: none;
+            display: flex;
+            padding: none;
+            margin: 0;
+            font-size: 22px;
         }
     
         .aNav:hover{
             color: black;
             background-color: white;
-            display: none;
+            display: flex;
         }
 }

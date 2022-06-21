@@ -3,41 +3,43 @@ const introSection = document.querySelector("#intro-section");
 const carouselSection = document.querySelector("#carousel-section");
 const aboutSection = document.querySelector("#about-section");
 const buySection = document.querySelector("#buy-section");
-const navBar = document.querySelector("#navbar");
-const infoH3 = document.querySelector("#info");
-const authorH3 = document.querySelector("#author");
-const buyH3ID = document.querySelector("#buy");
 const classH3 = document.querySelectorAll(".h3Nav");
 const classA = document.querySelectorAll(".aNav");
+const body = document.querySelector("body");
+const header = document.querySelector("#header");
+const navBar = document.querySelector("#navbar");
+const infoH3 = document.createElement("h3");
+const authorH3 = document.createElement("h3");
+const buyH3ID = document.createElement("h3");
+const infoA = document.createElement("a");
+const authorA = document.createElement("a");
+const buyA = document.createElement("a");
 
-const wavesIcon = document.createElement("img");
-wavesIcon.setAttribute("id", "waves-icon");
-wavesIcon.src = "wavesicon.png";
 
 
-function wavesShow() {
-    if (window.innerWidth <= 1000) {
-        navBar.appendChild(wavesIcon);
-        wavesIcon.style.display = "flex";
-        navBar.style.border = "none";
-        navBar.style.justifyItems = "flex-end";
-        wavesIcon.style.justifyItems = "flex-end";
-        wavesIcon.style.marginTop = "5px";
-        wavesIcon.style.marginRight = "5px"
-        wavesIcon.style.alignItems = "center";
-        wavesIcon.addEventListener("click", function () {
-            const navDiv = document.createElement("div");
-            navBar.style.display = "flex";
-            navDiv.style.width = "100%";
-            navDiv.style.height = "50px";
-            navDiv.style.border = "1px solid black";
-        })
-    } else {
-        wavesIcon.style.display = "none";
-    }
-}
+navBar.appendChild(infoH3)
+navBar.appendChild(authorH3)
+navBar.appendChild(buyH3ID)
+infoH3.appendChild(infoA)
+authorH3.appendChild(authorA)
+buyH3ID.appendChild(buyA)
 
-window.onload = wavesShow();
+infoA.setAttribute("href", "#intro-section");
+authorA.setAttribute("href", "#about-section");
+buyA.setAttribute("href", "#buy-section");
+
+
+infoA.textContent = "Info";
+authorA.textContent = "Author";
+buyA.textContent = "Buy";
+
+buyH3ID.classList.add("h3Nav");
+infoH3.classList.add("h3Nav");
+authorH3.classList.add("h3Nav");
+
+infoA.classList.add("aNav");
+authorA.classList.add("aNav");
+buyA.classList.add("aNav");
 
 
 
